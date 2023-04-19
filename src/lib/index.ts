@@ -1,0 +1,1 @@
+export { lazyWithRetries } from './lazyRetriesMultiComponent';
