@@ -17,7 +17,7 @@ function App() {
                 }}
             />
             <Suspense fallback="<div>Loading</div>">
-            <MyButton>Click me</MyButton>
+            <MyButton/>
             </Suspense>
         </>
     );
