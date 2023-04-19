@@ -1,1 +1,1 @@
-export { lazyWithRetries } from './lazyRetriesMultiComponent';
+export { lazyLoadWithRetries } from "./LazyLoadWithRetries";

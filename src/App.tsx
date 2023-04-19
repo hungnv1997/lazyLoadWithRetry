@@ -1,10 +1,12 @@
-import styled from 'styled-components';
-import MyButton from './lib/MyButton';
-import SvgIcon from './lib/SvgIcon';
+import { Suspense } from 'react';
+import { lazyLoadWithRetries } from './lib';
 
+// import MyButton from './lib/MyButton';
+import SvgIcon from './lib/SvgIcon';
 function App() {
+    const MyButton = lazyLoadWithRetries(()=> import('./lib/MyButton'))
     return (
-        <Wrapper>
+        <>
             <SvgIcon
                 iconName="./react"
                 svgProp={{
@@ -14,15 +16,12 @@ function App() {
                     fill: '#61dafb',
                 }}
             />
+            <Suspense fallback="<div>Loading</div>">
             <MyButton>Click me</MyButton>
-        </Wrapper>
+            </Suspense>
+        </>
     );
 }
 
-const Wrapper = styled.div`
-    margin: 2rem;
-    display: flex;
-    justify-content: center;
-`;
 
 export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const lazyWithRetries: typeof React.lazy = (importer) => {
+export const lazyLoadWithRetries: typeof React.lazy = (importer) => {
     const retryImport = async () => {
         try {
             return await importer();
