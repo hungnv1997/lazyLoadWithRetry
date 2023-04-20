@@ -1,7 +1,8 @@
 # lazyLoadWithRetry
 If the file cannot be downloaded during navigation due to an error or network issue, the app may crash as React.lazy fails to import the component. To handle this situation gracefully, it's important to implement proper error handling and retry mechanisms to ensure smooth performance of the application. [react-lazy-load-with-retries](https://www.npmjs.com/package/react-lazy-load-with-retries) will help you fix this issue. 
 
-https://user-images.githubusercontent.com/46401220/233223240-747c66ac-c173-4126-800a-d0dc407fe2bb.mp4
+
+![react-lazy-load-with-retries](https://user-images.githubusercontent.com/46401220/233241220-6e741c3d-9865-49f9-abf5-5422c330dd61.gif)
 
 ## Usage
 ```js
