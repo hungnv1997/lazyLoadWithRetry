@@ -5,6 +5,7 @@ export const lazyLoadWithRetries: typeof React.lazy = (importer) => {
         try {
             return await importer();
         } catch (error: any) {
+             
             // retry 5 times with 2 second delay and backoff factor of 2 (2, 4, 8, 16, 32 seconds)
             for (let i = 0; i < 5; i++) {
                 await new Promise((resolve) => setTimeout(resolve, 1000 * 2 ** i));

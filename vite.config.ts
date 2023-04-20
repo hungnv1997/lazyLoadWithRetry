@@ -1,9 +1,16 @@
 import react from "@vitejs/plugin-react";
 import path from "node:path";
-import { defineConfig } from "vite";
+import { createLogger, defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import svgr from "vite-plugin-svgr";
+const logger = createLogger();
+const originalWarning = logger.warn;
+logger.warn = (msg, options) => {
+  if (msg.includes("vite") && msg.includes(" dynamic import")) return;
+  originalWarning(msg, options);
+};
 export default defineConfig({
+  customLogger: logger,
   plugins: [
     react(),
     dts({
