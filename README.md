@@ -5,8 +5,12 @@ https://user-images.githubusercontent.com/46401220/233223240-747c66ac-c173-4126-
 
 ## Usage
 ```js
+npm i react-lazy-load-with-retries
+```
+
+```js
 import { Suspense } from 'react';
-import { lazyLoadWithRetries } from './lib';
+import { lazyLoadWithRetries } from 'react-lazy-load-with-retries';
 
 function App() {
     const MyButton = lazyLoadWithRetries(()=> import('./lib/MyButton'))
