@@ -2,7 +2,6 @@ import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { createLogger, defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import svgr from "vite-plugin-svgr";
 const logger = createLogger();
 const originalWarning = logger.warn;
 logger.warn = (msg, options) => {
@@ -15,11 +14,6 @@ export default defineConfig({
     react(),
     dts({
       insertTypesEntry: true,
-    }),
-    svgr({
-      svgrOptions: {
-        // svgr options
-      },
     }),
   ],
   build: {
